@@ -1,162 +1,217 @@
 <!Doctype html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
-        /******************* Timeline CSS*****************/
-.demo{background:#f2f2f2}
-.main-timeline6{overflow:hidden;position:relative}
-.main-timeline6 .timeline{width:50%;float:right;position:relative;z-index:1}
-.main-timeline6 .timeline:after,.main-timeline6 .timeline:before{position:absolute;top:50%;content:"";display:block;clear:both}
-.main-timeline6 .timeline:before{width:40%;height:6px;background:#9f005d;left:0;z-index:-1;transform:translateY(-50%)}
-.main-timeline6 .timeline:after{width:6px;height:70%;background:#9f005d;left:-3px}
-.main-timeline6 .timeline-content{width:65%;float:right;padding:0 0 30px 30px;margin-right:15px;background:#fff;border-radius:10px;box-shadow:3px 3px 5px 6px #ccc}
-.main-timeline6 .timeline-content:after,.main-timeline6 .timeline-content:before{content:"";width:26px;height:26px;border-radius:50%;background:#9f005d;position:absolute;top:50%;left:-13px;z-index:1;transform:translateY(-50%)}
-.main-timeline6 .timeline-content:after{left:30%;transform:translate(-50%,-50%)}
-.main-timeline6 .year{display:block;font-size:28px;font-weight:700;color:#9f005d;text-align:center;padding-left:50px}
-.main-timeline6 .content-inner{padding:35px 15px 35px 110px;margin-right:-15px;background:#9f005d;border-radius:150px 0 0 150px;position:relative}
-.main-timeline6 .content-inner:after,.main-timeline6 .content-inner:before{content:"";border-left:15px solid #640026;border-top:10px solid transparent;position:absolute;top:-10px;right:0}
-.main-timeline6 .content-inner:after{border-top:none;border-bottom:10px solid transparent;top:auto;bottom:-10px}
-.main-timeline6 .icon{width:110px;height:100%;text-align:center;position:absolute;top:0;left:0}
-.main-timeline6 .icon i{font-size:60px;font-weight:700;color:#fff;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
-.main-timeline6 .title{font-size:22px;font-weight:700;color:#fff;margin:0 0 5px}
-.main-timeline6 .description{font-size:14px;color:#fff;margin:0}
-.main-timeline6 .timeline:nth-child(2n) .icon,.main-timeline6 .timeline:nth-child(2n):after,.main-timeline6 .timeline:nth-child(2n):before{left:auto;right:0}
-.main-timeline6 .timeline:nth-child(2n):after{right:-3px}
-.main-timeline6 .timeline:nth-child(2n) .timeline-content{float:left;padding:0 30px 30px 0;margin:0 0 0 15px}
-.main-timeline6 .timeline:nth-child(2n) .timeline-content:after,.main-timeline6 .timeline:nth-child(2n) .timeline-content:before{left:auto;right:-13px}
-.main-timeline6 .timeline:nth-child(2n) .timeline-content:after{right:30%;margin-right:-25px}
-.main-timeline6 .timeline:nth-child(2n) .year{padding:0 50px 0 0;color:#05b1ff}
-.main-timeline6 .timeline:nth-child(2n) .content-inner{padding:35px 110px 35px 15px;margin:0 0 0 -15px;border-radius:0 150px 150px 0}
-.main-timeline6 .timeline:nth-child(2n) .content-inner:after,.main-timeline6 .timeline:nth-child(2n) .content-inner:before{border:none;border-right:15px solid #027dcd;border-top:10px solid transparent;right:auto;left:0}
-.main-timeline6 .timeline:nth-child(2n) .content-inner:after{border-top:none;border-bottom:10px solid transparent}
-.main-timeline6 .timeline:nth-child(2){margin-top:200px}
-.main-timeline6 .timeline:nth-child(odd){margin:-190px 0 0}
-.main-timeline6 .timeline:nth-child(even){margin-bottom:70px}
-.main-timeline6 .timeline:first-child,.main-timeline6 .timeline:last-child:nth-child(even){margin:0}
-.main-timeline6 .timeline:nth-child(2n) .content-inner,.main-timeline6 .timeline:nth-child(2n) .timeline-content:after,.main-timeline6 .timeline:nth-child(2n) .timeline-content:before,.main-timeline6 .timeline:nth-child(2n):after,.main-timeline6 .timeline:nth-child(2n):before{background:#05b1ff}
-.main-timeline6 .timeline:nth-child(3n) .content-inner,.main-timeline6 .timeline:nth-child(3n) .timeline-content:after,.main-timeline6 .timeline:nth-child(3n) .timeline-content:before,.main-timeline6 .timeline:nth-child(3n):after,.main-timeline6 .timeline:nth-child(3n):before{background:#00a3a9}
-.main-timeline6 .timeline:nth-child(3n) .content-inner:after,.main-timeline6 .timeline:nth-child(3n) .content-inner:before{border-left-color:#006662}
-.main-timeline6 .timeline:nth-child(3n) .year{color:#00a3a9}
-.main-timeline6 .timeline:nth-child(4n) .content-inner,.main-timeline6 .timeline:nth-child(4n) .timeline-content:after,.main-timeline6 .timeline:nth-child(4n) .timeline-content:before,.main-timeline6 .timeline:nth-child(4n):after,.main-timeline6 .timeline:nth-child(4n):before{background:#f92534}
-.main-timeline6 .timeline:nth-child(4n) .content-inner:after,.main-timeline6 .timeline:nth-child(4n) .content-inner:before{border-right-color:#92070e}
-.main-timeline6 .timeline:nth-child(4n) .year{color:#f92534}
-@media only screen and (max-width:990px) and (min-width:768px){.main-timeline6 .timeline:after{height:80%}
-}
-@media only screen and (max-width:767px){.main-timeline6 .timeline:last-child,.main-timeline6 .timeline:nth-child(even),.main-timeline6 .timeline:nth-child(odd){margin:0}
-.main-timeline6 .timeline{width:95%;margin:15px 15px 15px 0!important}
-.main-timeline6 .timeline .timeline-content:after,.main-timeline6 .timeline .timeline-content:before,.main-timeline6 .timeline:after,.main-timeline6 .timeline:before{display:none}
-.main-timeline6 .timeline-content,.main-timeline6 .timeline:nth-child(2n) .timeline-content{width:100%;float:none;padding:0 0 30px 30px;margin:0}
-.main-timeline6 .content-inner,.main-timeline6 .timeline:nth-child(2n) .content-inner{padding:35px 15px 35px 110px;margin:0 -15px 0 0;border-radius:150px 0 0 150px}
-.main-timeline6 .timeline:nth-child(2n) .content-inner:after,.main-timeline6 .timeline:nth-child(2n) .content-inner:before{border:none;border-left:15px solid #027dcd;border-top:10px solid transparent;right:0;left:auto}
-.main-timeline6 .timeline:nth-child(2n) .content-inner:after{border-top:none;border-bottom:10px solid transparent}
-.main-timeline6 .timeline:nth-child(2n) .icon{top:0;left:0}
-.main-timeline6 .timeline:nth-child(4n) .content-inner:after,.main-timeline6 .timeline:nth-child(4n) .content-inner:before{border-left-color:#92070e}
-}
-
-        
-        </style>
-        <title> Malmenator | Home Page </title>
+        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Malmenator </title>
     </head>
-    <body background="assets/background.jpg" style="background-repeat: no-repeat; background-size:cover;">
+    <body>
+        
         <div class="text-center" style="margin-top: 30px;">
                 <img src="assets/malemenator-logo-small.png" class="img-fluid" alt="Responsive image">
+                <h1 class="display-2" style="text-align: center; font-family: 'Dancing Script', cursive; color: navy; margin-top: 10px;"> Malmenator </h1> 
+            <h2 style="text-align: center; font-family: 'Dancing Script', cursive; color: navy;"> Network Based Intelligent Malware Detection </h2>
+        
         </div>
 
-            <h1 class="display-2" style="text-align: center; font-family: 'Dancing Script', cursive; font-size: 80px; color: navy; margin-top: 10px;"> Malmenator </h1> 
-            <p class="h2" style="text-align: center; font-family: 'Dancing Script', cursive; color: navy;"> Network Based Intelligent Malware Detection </p>
-        
-            <div class="card" style="width: 90%; margin: 0 auto; float: none; margin-top: 40px; ">
-                    <div class="card-body">
-                       <div class="container">
-                          <div class="row">
-                             <div class="col-sm-2">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active" id="v-pills-overview-tab" data-toggle="pill" href="#v-pills-overview" role="tab" aria-controls="v-pills-overview" aria-selected="true"> Overview </a>
-                                <a class="nav-link" id="v-pills-objective-tab" data-toggle="pill" href="#v-pills-objective" role="tab" aria-controls="v-pills-objective" aria-selected="false"> Objective </a>
-                                <a class="nav-link" id="v-pills-methodologies-tab" data-toggle="pill" href="#v-pills-methodologies" role="tab" aria-controls="v-pills-methodologies" aria-selected="false"> Methodologies </a>
-                                <a class="nav-link" id="v-pills-timeline-tab" data-toggle="pill" href="#v-pills-timeline" role="tab" aria-controls="v-pills-timeline" aria-selected="false"> Timeline </a>
-                                <a class="nav-link" id="v-pills-team-tab" data-toggle="pill" href="#v-pills-team" role="tab" aria-controls="v-pills-team" aria-selected="false"> Our Team </a>
-                                <a class="nav-link" id="v-pills-docs-tab" data-toggle="pill" href="#v-pills-docs" role="tab" aria-controls="v-pills-docs" aria-selected="false"> Documentation </a>
-
-
-                              </div>
+            
+            <div class="card" style="width: 95%; margin: 0 auto; float: none; margin-top: 40px; ">
+                        <div class="card-header">
+                                                        <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link active" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab" aria-controls="pills-overview" aria-selected="true"> Overview </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link" id="pills-objective-tab" data-toggle="pill" href="#pills-objective" role="tab" aria-controls="pills-objective" aria-selected="false"> Objective </a>
+                                        
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link" id="pills-methodologies-tab" data-toggle="pill" href="#pills-methodologies" role="tab" aria-controls="pills-methodologies" aria-selected="false"> Methodologies </a>
+                                        
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link" id="pills-timeline-tab" data-toggle="pill" href="#pills-timeline" role="tab" aria-controls="pills-timeline" aria-selected="false"> Timeline </a>
+                                        
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link" id="pills-team-tab" data-toggle="pill" href="#pills-team" role="tab" aria-controls="pills-team" aria-selected="false"> Our Team </a>
+                                        
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                                        <a class="nav-link" id="pills-docs-tab" data-toggle="pill" href="#pills-docs" role="tab" aria-controls="pills-docs" aria-selected="false"> Documentation </a>
+                                                                        </li>
+                                        
+                                        
+                                                                </ul>
+                               
                         </div>
-                        <div class="col-sm-10">
-                              <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel" aria-labelledby="v-pills-overview-tab">1</div>
-                                <div class="tab-pane fade" id="v-pills-objective" role="tabpanel" aria-labelledby="v-pills-objective-tab">2</div>
-                                <div class="tab-pane fade" id="v-pills-methodologies" role="tabpanel" aria-labelledby="v-pills-methodologies-tab">3</div>
-                                <div class="tab-pane fade" id="v-pills-timeline" role="tabpanel" aria-labelledby="v-pills-timeline-tab">
+                        <div class="card-body">
+                              <div class="tab-content text-center" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-objective" role="tabpanel" aria-labelledby="pills-objective-tab"> </div>
+                                <div class="tab-pane fade" id="pills-methodologies" role="tabpanel" aria-labelledby="pills-methodologies-tab"> </div>
+                                <div class="tab-pane fade" id="pills-timeline" role="tabpanel" aria-labelledby="pills-timeline-tab">
+                                <h3> Project Timeline </h3>        
                                                 <div class="container">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <div class="main-timeline6">
+                                                                        <div class="main-timeline">
                                                                             <div class="timeline">
+                                                                                <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                                                                                <span class="year"> September 2019</span>
                                                                                 <div class="timeline-content">
-                                                                                    <span class="year">2018</span>
-                                                                                    <div class="content-inner">
-                                                                                        <span class="icon"><i class="fa fa-globe"></i></span>
-                                                                                        <h3 class="title">Web Designer</h3>
-                                                                                        <p class="description">
-                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem, et condimentum neque commodo quis. Quisque eu ornare risus, vitae fermentum eros. Etiam venenatis ac.
-                                                                                        </p>
+                                                                                    <h5 class="title">Project Plan & Research </h5>
+                                                                                    <p class="description">
+                                                                                        1. Background Research on Malwares, Network Analysis, Antivirus & Machine Learning in Malware Detection </br>
+                                                                                        2. Assess Project Scope and Milestones                                                                                     
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="timeline">
+                                                                                <div class="timeline-icon"><i class="fa fa-briefcase"></i></div>
+                                                                                <span class="year">October 2019</span>
+                                                                                <div class="timeline-content">
+                                                                                    <h5 class="title"> Research on Network Analysis</h5>
+                                                                                    <div class="description">
+                                                                                        1. Developing on Snort for detecting Malwares on Network </br>
+                                                                                        2. Creating a sample Backdoor Malware for testing
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="timeline">
+                                                                                <div class="timeline-icon"><i class="fa fa-microchip"></i></div>
+                                                                                <span class="year">November 2019</span>
                                                                                 <div class="timeline-content">
-                                                                                    <span class="year">2017</span>
-                                                                                    <div class="content-inner">
-                                                                                        <span class="icon"><i class="fa fa-rocket"></i></span>
-                                                                                        <h3 class="title">Web Developer</h3>
-                                                                                        <p class="description">
-                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem, et condimentum neque commodo quis. Quisque eu ornare risus, vitae fermentum eros. Etiam venenatis ac.
-                                                                                        </p>
-                                                                                    </div>
+                                                                                    <h5 class="title"> Implement Hardware </h5>
+                                                                                    <p class="description">
+                                                                                        1. Working on packaging Network Analysis on Raspberry Pi </br>
+                                                                                        2. Test Malware Detection on Network using Raspberry Pi 
+                                                                                    </p>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="timeline">
-                                                                                <div class="timeline-content">
-                                                                                    <span class="year">2016</span>
-                                                                                    <div class="content-inner">
-                                                                                        <span class="icon"><i class="fa fa-briefcase"></i></span>
-                                                                                        <h3 class="title">Web Designer</h3>
-                                                                                        <p class="description">
-                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem, et condimentum neque commodo quis. Quisque eu ornare risus, vitae fermentum eros. Etiam venenatis ac.
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
+                                                                                        <div class="timeline-icon"><i class="fa fa-tv"></i></div>
+                                                                                        <span class="year">December 2019</span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Implement Dashboard </h5>
+                                                                                            <p class="description">
+                                                                                                1. Work on ELK Stack to visualize data from Network Analysis </br>
+                                                                                                2. Develop a one stop Dashboard for the entire product
+                                                                                            </p>
+                                                                                        </div>
                                                                             </div>
                                                                             <div class="timeline">
-                                                                                <div class="timeline-content">
-                                                                                    <span class="year">2015</span>
-                                                                                    <div class="content-inner">
-                                                                                        <span class="icon"><i class="fa fa-mobile"></i></span>
-                                                                                        <h3 class="title">Web Developer</h3>
-                                                                                        <p class="description">
-                                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada tellus lorem, et condimentum neque commodo quis. Quisque eu ornare risus, vitae fermentum eros. Etiam venenatis ac.
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
+                                                                                        <div class="timeline-icon"><i class="fa fa-file"></i></div>
+                                                                                        <span class="year">January 2020 </span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Interim Report & Presentation </h5>
+                                                                                            <p class="description">
+                                                                                                1. Consolidate a mid-term report for the project </br>
+                                                                                                2. Present the project to Supervisor and second examiner
+                                                                                            </p>
+                                                                                        </div>
+                                                                            </div>
+                                                                            <div class="timeline">
+                                                                                        <div class="timeline-icon"><i class="fa fa-search"></i></div>
+                                                                                        <span class="year">February 2020 </span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Malware Detection & Risk Analysis </h5>
+                                                                                            <p class="description">
+                                                                                                1. Develop a Machine Learning model to classify malware files </br>
+                                                                                                2. Analyse risk of each PC for node based risk classification
+                                                                                            </p>
+                                                                                        </div>
+                                                                            </div>
+                                                                            <div class="timeline">
+                                                                                        <div class="timeline-icon"><i class="fa fa-server"></i></div>
+                                                                                        <span class="year">March 2020 </span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Optimize File Scanning </h5>
+                                                                                            <p class="description">
+                                                                                                1. Optimize file scanning by removing redundancies  </br>
+                                                                                                2. Narrow down scope of scan to potentially risky files
+                                                                                            </p>
+                                                                                        </div>
+                                                                            </div>
+                                                                            <div class="timeline">
+                                                                                        <div class="timeline-icon"><i class="fa fa-code"></i></div>
+                                                                                        <span class="year">April 2020 </span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Production & Testing </h5>
+                                                                                            <p class="description">
+                                                                                                1. Deploy the project on cloud and Raspberry Pi  </br>
+                                                                                                2. Test the project on various viruses for performance
+                                                                                            </p>
+                                                                                        </div>
+                                                                            </div>
+                                                                            <div class="timeline">
+                                                                                        <div class="timeline-icon"><i class="fa fa-trophy"></i></div>
+                                                                                        <span class="year">May 2020 </span>
+                                                                                        <div class="timeline-content">
+                                                                                            <h5 class="title"> Project Exhibition </h5>
+                                                                                            <p class="description">
+                                                                                                1. Create a Project Poster for exhibition  </br>
+                                                                                                2. Test the project for the exhibition
+                                                                                            </p>
+                                                                                        </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-team" role="tabpanel" aria-labelledby="v-pills-team-tab">5</div>
-                                <div class="tab-pane fade" id="v-pills-docs" role="tabpanel" aria-labelledby="v-pills-docs-tab">6</div>
+                                <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab"> </div>
+                                <div class="tab-pane fade" id="pills-docs" role="tabpanel" aria-labelledby="pills-docs-tab"> </div>
+                                </div>
+                         
+                              
+                          
+                        </div>
+                        <div class="card-footer">
+                                        <div class="progress">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" id="dynamic" role="progressbar" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100" style="width: 17%"></div>
+                                        </div>
                               </div>
-                        </div>
-                        </div>
                       </div>
-                    </div>
-
-            </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+       
+        $("#pills-overview-tab").click(function() {
+                $("#dynamic")
+                .css("width", 17 + "%")
+                .attr("aria-valuenow", 17)
+        });  
+        $("#pills-objective-tab").click(function() {
+                $("#dynamic")
+                .css("width", 34 + "%")
+                .attr("aria-valuenow", 34)
+        }); 
+        $("#pills-methodologies-tab").click(function() {
+                $("#dynamic")
+                .css("width", 51 + "%")
+                .attr("aria-valuenow", 51)
+        });
+        $("#pills-timeline-tab").click(function() {
+                $("#dynamic")
+                .css("width", 68 + "%")
+                .attr("aria-valuenow", 68)
+        });
+        $("#pills-team-tab").click(function() {
+                $("#dynamic")
+                .css("width", 85 + "%")
+                .attr("aria-valuenow", 85)
+        });     
+        $("#pills-docs-tab").click(function() {
+                $("#dynamic")
+                .css("width", 100 + "%")
+                .attr("aria-valuenow", 100)
+        });
+            
+        </script>
     </body>
 </html>
