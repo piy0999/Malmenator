@@ -284,9 +284,212 @@
             font-size: calc(1.275rem + 0.3vw);
           }
         }
-        @media (max-width: 767px) {
-            .nav-pills>li {
-                float: none;
-            }
+
+        .progress{
+            height: 6px;
+            background: #fff;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 70px;
+            overflow: visible;
         }
+        .progress .progress-bar{
+            box-shadow: none;
+            border-radius: 5px;
+            position: relative;
+            animation: animate-positive 2s;
+        }
+        .progress .progress-title{
+            padding: 3px 10px;
+            margin: 0;
+            min-width: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #282828;
+            line-height: 22px;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            background: #fff;
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.14);
+            position: absolute;
+            top: -10px;
+            left: 0;
+        }
+        .progress .progress-value{
+            width: 50px;
+            height: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 25px;
+            border-radius: 4px;
+            position: absolute;
+            top: -40px;
+            right: 0;
+        }
+        .progress.pink .progress-bar,
+        .progress.pink .progress-value{ background: #ff007f; }
+        .progress.green .progress-bar,
+        .progress.green .progress-value{ background: #73cd21; }
+        .progress.blue .progress-bar,
+        .progress.blue .progress-value{ background: #2e9ce0; }
+        .progress.yellow .progress-bar,
+        .progress.yellow .progress-value{ background: #eea921; }
+        .progress.red .progress-bar,
+        .progress.red .progress-value{ background: #ee2121; }
+        @-webkit-keyframes animate-positive{
+            0%{ width: 0; }
+        }
+        @keyframes animate-positive{
+            0%{ width: 0; }
+        }
+        
+        .serviceBox{
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+        .serviceBox .service-icon{
+            color: #fff;
+            background: linear-gradient(135deg,#FF87D0,#F6449A);
+            font-size: 50px;
+            line-height: 80px;
+            height: 80px;
+            width: 80px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 0 5px #fff,0 0 12px rgba(0,0,0,0.5);
+        }
+        .serviceBox .service-icon i.fa{ transition: all 0.3s ease 0s; }
+        .serviceBox:hover .service-icon i.fa{
+            text-shadow: 0 0 5px #555;
+            transform: rotateY(360deg) rotateX(360deg);
+        }
+        .serviceBox .service-content{
+            background-color: #fff;
+            padding: 10px 13px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px -5px rgba(0,0,0,0.5);
+        }
+        .serviceBox .title{
+            color: #fff;
+            background: linear-gradient(135deg,#FF87D0,#F6449A);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 7px 15px;
+            margin: -21px 7px 15px;
+            border-radius: 0 0 25px 25px;
+            position: relative;
+            z-index: 1;
+        }
+        .serviceBox .title:before,
+        .serviceBox .title:after{
+            content: "";
+            background: linear-gradient(-45deg,#9F2685 49%,transparent 50%);
+            width: 12px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+            left: -12px;
+        }
+        .serviceBox .title:after{
+            transform: rotateY(180deg);
+            left: auto;
+            right: -12px;
+        }
+        .serviceBox .description{
+            color: #777;
+            font-size: 15px;
+            line-height: 25px;
+            margin: 0;
+        }
+        .serviceBox.blue .service-icon,
+        .serviceBox.blue .title{
+            background: linear-gradient(135deg,#01B9F7,#008ED0);
+        }
+        .serviceBox.blue .title:before,
+        .serviceBox.blue .title:after{
+            background: linear-gradient(-45deg,#004B8E 49%,transparent 50%);
+        }
+        .serviceBox.orange .service-icon,
+        .serviceBox.orange .title{
+            background: linear-gradient(135deg,#FFC500,#FE9B00);
+        }
+        .serviceBox.orange .title:before,
+        .serviceBox.orange .title:after{
+            background: linear-gradient(-45deg,#DA6603 49%,transparent 50%);
+        }
+        .serviceBox.green .service-icon,
+        .serviceBox.green .title{
+            background: linear-gradient(135deg,#04DDCA,#2DB0A8);
+        }
+        .serviceBox.green .title:before,
+        .serviceBox.green .title:after{
+            background: linear-gradient(-45deg,#046b5f 49%,transparent 50%);
+        }
+        @media only screen and (max-width:990px){
+            .serviceBox{ margin: 0 0 40px; }
+        }
+
+        .our-team .pic{
+            border-top: 5px solid #ff8e72;
+            border-bottom: 5px solid #ff8e72;
+            border-radius: 50% 50% 50% 0;
+            overflow: hidden;
+            transition: all 0.5s ease 0s;
+        }
+        .our-team:hover .pic{
+            border-top-color: #8f2d56;
+            border-bottom-color: #8f2d56;
+            border-radius: 50% 0;
+        }
+        .our-team .pic img{
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease 0s;
+        }
+        .our-team .team-content{ padding: 20px 0; }
+        .our-team .title{
+            font-size: 22px;
+            font-weight: 700;
+            color: #8f2d56;
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+        }
+        .our-team .post{
+            display: block;
+            font-size: 17px;
+            color: #878484;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        .our-team .social{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .our-team .social li{ display: inline-block; }
+        .our-team .social li a{
+            display: block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            border: 1px solid #8f2d56;
+            background: #fff;
+            font-size: 17px;
+            color: #8f2d56;
+            text-align: center;
+            transition: all 0.5s ease 0s;
+        }
+        .our-team:hover .social li a{
+            background: #8f2d56;
+            color: #fff;
+        }
+        @media only screen and (max-width: 990px){
+            .our-team{ margin-bottom: 30px; }
+        }
+
         
