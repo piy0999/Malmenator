@@ -10,6 +10,8 @@ import os
 import pandas as pd
 import numpy as np
 from joblib import dump, load
+#import requests
+from elasticsearch import Elasticsearch
 
 df = pd.read_csv('packets-record.pcap_Flow.csv')
 
@@ -72,14 +74,33 @@ df['predicted'] = y_pred
 df['Timestamp'] = pd.to_datetime(df['Timestamp'])
 
 
-# In[7]:
+# In[8]:
 
 
-df.to_csv('model_output.csv', header=False, index=False)
+es = Elasticsearch("https://search-malmenator-hodt3wt2k7b5x7ph63zibt3eiy.us-east-1.es.amazonaws.com/")
+
+
+# In[9]:
+
+
+es
+
+
+# In[10]:
+
+
+vals = df.T.to_dict().values()
+
+
+# In[12]:
+
+
+for i in vals:
+    es.index(index="flows_model", doc_type="_doc", body=i)
 
 
 # In[ ]:
 
 
-
+print("Data sent to ES")
 
