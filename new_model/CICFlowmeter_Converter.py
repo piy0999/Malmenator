@@ -13,7 +13,7 @@ from joblib import dump, load
 #import requests
 from elasticsearch import Elasticsearch
 
-df = pd.read_csv('packets-record.pcap_Flow.csv')
+df = pd.read_csv('/home/ubuntu/Malmenator/new_model/packets-record.pcap_Flow.csv')
 
 
 # In[2]:
@@ -40,7 +40,7 @@ df_out = df.drop(columns=cols_to_drop, axis=1)
 # In[3]:
 
 
-scaler = load('std_scaler_cicids17.bin')
+scaler = load('/home/ubuntu/Malmenator/new_model/std_scaler_cicids17.bin')
 
 cols = list(df_out.columns.values)
 cols.remove('Fwd PSH Flags')
@@ -62,7 +62,7 @@ df_out[cols] = scaler.transform(df_out[cols])
 # In[4]:
 
 
-model = load('rf_cicids2017.joblib') 
+model = load('/home/ubuntu/Malmenator/new_model/rf_cicids2017.joblib') 
 
 y_pred = model.predict(df_out)
 
