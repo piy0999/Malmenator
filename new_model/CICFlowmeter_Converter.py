@@ -13,7 +13,7 @@ from joblib import dump, load
 #import requests
 from elasticsearch import Elasticsearch
 
-df = pd.read_csv('/home/ubuntu/Malmenator/new_model/packets-record.pcap_Flow.csv')
+df = pd.read_csv('/home/ubuntu/Malmenator/new_model/packets-record.csv')
 
 
 # In[2]:
