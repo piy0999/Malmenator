@@ -13,7 +13,7 @@ from joblib import dump, load
 #import requests
 from elasticsearch import Elasticsearch
 
-df = pd.read_csv('/home/ubuntu/Malmenator/new_model/packets-record.csv')
+df = pd.read_csv('/home/ubuntu/Malmenator/new_model/packets-record.pcap_Flow.csv')
 
 
 # In[2]:
@@ -71,7 +71,7 @@ y_pred = model.predict(df_out)
 
 
 df['predicted'] = y_pred
-df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df['Timestamp'] = pd.to_datetime(df['Timestamp'], format="%d/%m/%Y %I:%M:%S %p")
 
 
 # In[8]:
